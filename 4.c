@@ -1,21 +1,25 @@
 #include<stdio.h>
 int main()
 {
-int n,i,sum,x,real,nub=0;
-scanf("%d",&n);
-for(i=1;i<n;i++)
-{
-    real=i;
-    while(1)
+    int n,real,a,q,nub=0,i,sum=0;
+    scanf("%d",&n);
+    for (i=1;i<=n;i++)
     {
-        x=i%10;
-        sum=sum*10+x;
-        i/=10;
-        if(real==sum)
+        real=i;
+        q=i;
+        for(;1;)
         {
-            nub++;
+            a=q%10;
+            q/=10;
+            sum=sum*10+a;
+            if(real == sum )
+            {
+                nub++;
+                sum=0;
+                break;
+            }
+
         }
     }
-}
-printf("%d",nub);
+    printf("%d",nub);
 }
