@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int n,i,n1,nub=0;
+    int n,i,n1,nub=0,nub1=0;
     scanf("%d",&n);
     n1=n;
     if(n<8)
@@ -10,19 +10,39 @@ int main()
     }
     else
     {
-    for(i=2;i<n;)
-    {
-        if(n%i==0)
+        for(int k=8; k<=n; k++)
         {
-            n/=i;
-            nub++;
-        }
-        else
-        {
-            i++;
-            nub=0;
+            for(i=2; i<n;)
+            {
+                if(k%i==0)
+                {
+                    n/=i;
+                    nub++;
+                    if(nub==2)
+                    {
+                        nub=0;
+                        nub1++;
+                    }
+                }
+                else
+                {
+                    i++;
+                    nub=0;
+                }
+            }
         }
     }
-printf("%d %d ",i,nub+1);
+    if (n1==8)
+    {
+         printf("Not Cube Free");
+    }
+    else if(nub==3)
+    {
+         printf("Not Cube Free");
+    }
+    else
+    {
+    printf("%d",n1-nub1);
+
     }
 }
