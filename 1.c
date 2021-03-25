@@ -18,16 +18,15 @@ int main()
                 {
                     n/=i;
                     nub++;
+                }
+                else
+                {
                     if(nub==2)
                     {
                         nub=0;
                         nub1++;
                     }
-                }
-                else
-                {
                     i++;
-                    nub=0;
                 }
             }
         }
